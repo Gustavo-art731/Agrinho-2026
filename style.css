@@ -1,0 +1,498 @@
+/* =============================================
+   AGRINHO 2026 — Agro Forte, Futuro Sustentável
+   Arquivo: style.css
+   Descrição: Estilos principais do site
+   ============================================= */
+
+/* --- VARIÁVEIS DE COR E FONTE --- */
+:root {
+  --verde-escuro: #1a3a2a;
+  --verde-medio: #2d6a4f;
+  --verde-claro: #52b788;
+  --verde-menta: #b7e4c7;
+  --amarelo-terra: #d4a017;
+  --amarelo-claro: #fef3c7;
+  --marrom: #6b4f2a;
+  --branco: #f8faf8;
+  --cinza-claro: #eef2ee;
+  --texto-escuro: #1a2a1a;
+  --texto-medio: #3d5a3d;
+  --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --fonte-titulo: 'Playfair Display', serif;
+  --fonte-corpo: 'Lato', sans-serif;
+  --raio: 12px;
+  --transicao: 0.3s ease;
+}
+
+/* --- RESET BÁSICO --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--branco);
+  color: var(--texto-escuro);
+  line-height: 1.7;
+}
+
+/* --- HEADER --- */
+.header {
+  background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 60%, var(--verde-claro) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Textura decorativa no header */
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(82, 183, 136, 0.15) 0%, transparent 60%);
+  animation: pulsar 6s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  animation: entrar-cima 1s ease forwards;
+}
+
+@keyframes entrar-cima {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header-tag {
+  display: inline-block;
+  background-color: var(--amarelo-terra);
+  color: var(--verde-escuro);
+  font-family: var(--fonte-corpo);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.header-title {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  color: var(--branco);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.header-title em {
+  color: var(--verde-menta);
+  font-style: italic;
+}
+
+.header-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+.btn-scroll {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid var(--verde-menta);
+  color: var(--verde-menta);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color var(--transicao), color var(--transicao);
+}
+
+.btn-scroll:hover {
+  background-color: var(--verde-menta);
+  color: var(--verde-escuro);
+}
+
+/* --- LAYOUT GERAL --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.secao {
+  padding: 80px 0;
+}
+
+.secao-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 20px;
+}
+
+.secao-texto {
+  font-size: 1.05rem;
+  color: var(--texto-medio);
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+/* --- SEÇÃO PROBLEMA --- */
+.secao-problema {
+  background-color: var(--cinza-claro);
+}
+
+.secao-problema .secao-texto {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+/* --- CARDS --- */
+.secao-pilares {
+  background-color: var(--branco);
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--branco);
+  border: 1px solid var(--verde-menta);
+  border-radius: var(--raio);
+  padding: 32px 28px;
+  flex: 1 1 220px;
+  max-width: 260px;
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card-icone {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+}
+
+.card-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 10px;
+}
+
+.card-texto {
+  font-size: 0.93rem;
+  color: var(--texto-medio);
+  line-height: 1.65;
+}
+
+/* --- QUIZ --- */
+.secao-quiz {
+  background: linear-gradient(180deg, var(--verde-escuro), var(--verde-medio));
+  color: var(--branco);
+}
+
+.secao-quiz .secao-titulo {
+  color: var(--verde-menta);
+}
+
+.secao-quiz .secao-texto {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.quiz-box {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--raio);
+  padding: 40px 36px;
+  max-width: 680px;
+}
+
+.quiz-pergunta {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--branco);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.quiz-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quiz-opcoes button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--branco);
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.97rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transicao), border-color var(--transicao);
+}
+
+.quiz-opcoes button:hover {
+  background-color: rgba(82, 183, 136, 0.3);
+  border-color: var(--verde-claro);
+}
+
+.quiz-opcoes button.correta {
+  background-color: rgba(82, 183, 136, 0.5);
+  border-color: var(--verde-claro);
+}
+
+.quiz-opcoes button.errada {
+  background-color: rgba(220, 80, 80, 0.4);
+  border-color: #e06060;
+}
+
+.quiz-feedback {
+  font-size: 0.97rem;
+  font-weight: 700;
+  min-height: 24px;
+  color: var(--verde-menta);
+  margin-bottom: 16px;
+}
+
+.btn-quiz {
+  background-color: var(--amarelo-terra);
+  color: var(--verde-escuro);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.97rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--transicao);
+}
+
+.btn-quiz:hover {
+  opacity: 0.85;
+}
+
+.quiz-resultado {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--amarelo-claro);
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+/* --- DADOS / CONTADORES --- */
+.secao-dados {
+  background-color: var(--cinza-claro);
+}
+
+.dados-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.dado-item {
+  text-align: center;
+  flex: 1 1 180px;
+  max-width: 220px;
+}
+
+.dado-numero {
+  font-family: var(--fonte-titulo);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--verde-medio);
+}
+
+.dado-sufixo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  color: var(--amarelo-terra);
+  font-weight: 700;
+}
+
+.dado-label {
+  font-size: 0.9rem;
+  color: var(--texto-medio);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* --- CALCULADORA --- */
+.secao-calculadora {
+  background-color: var(--branco);
+}
+
+.calc-box {
+  background-color: var(--cinza-claro);
+  border-radius: var(--raio);
+  padding: 36px;
+  max-width: 560px;
+  box-shadow: var(--sombra);
+}
+
+.calc-campo {
+  margin-bottom: 20px;
+}
+
+.calc-campo label {
+  display: block;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.calc-campo input,
+.calc-campo select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--verde-menta);
+  border-radius: 8px;
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  background-color: var(--branco);
+  color: var(--texto-escuro);
+  outline: none;
+  transition: border-color var(--transicao);
+}
+
+.calc-campo input:focus,
+.calc-campo select:focus {
+  border-color: var(--verde-medio);
+}
+
+.btn-calcular {
+  background-color: var(--verde-medio);
+  color: var(--branco);
+  border: none;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transicao);
+  margin-bottom: 20px;
+}
+
+.btn-calcular:hover {
+  background-color: var(--verde-escuro);
+}
+
+.calc-resultado {
+  font-size: 1rem;
+  color: var(--verde-escuro);
+  font-weight: 700;
+  line-height: 1.7;
+  min-height: 28px;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: var(--verde-escuro);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.footer strong {
+  color: var(--verde-menta);
+}
+
+.footer-tema {
+  margin: 10px 0 6px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.footer-creditos {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 6px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 2.4rem;
+  }
+
+  .secao {
+    padding: 56px 0;
+  }
+
+  .cards-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .dados-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quiz-box {
+    padding: 28px 20px;
+  }
+
+  .calc-box {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .secao-titulo {
+    font-size: 1.6rem;
+  }
+}

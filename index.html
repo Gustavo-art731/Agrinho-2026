@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <span class="header-tag">Concurso Agrinho 2026</span>
+        <h1 class="header-title">Agro Forte,<br /><em>Futuro Sustentável</em></h1>
+        <p class="header-subtitle">Equilíbrio entre produção e meio ambiente</p>
+        <a href="#conteudo" class="btn-scroll">Explorar ↓</a>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="conteudo">
+
+      <!-- SEÇÃO: O PROBLEMA -->
+      <section class="secao secao-problema">
+        <div class="container">
+          <h2 class="secao-titulo">O Desafio do Nosso Tempo</h2>
+          <p class="secao-texto">
+            O agronegócio é responsável por cerca de <strong>25% do PIB brasileiro</strong> e alimenta bilhões de pessoas no mundo.
+            Mas o avanço da produção sem planejamento ameaça biomas, recursos hídricos e a biodiversidade.
+            A questão central é: como produzir mais <em>sem destruir o planeta?</em>
+          </p>
+        </div>
+      </section>
+
+      <!-- SEÇÃO: CARDS DE PILARES -->
+      <section class="secao secao-pilares">
+        <div class="container">
+          <h2 class="secao-titulo">Os Pilares da Sustentabilidade no Campo</h2>
+          <div class="cards-grid">
+
+            <div class="card">
+              <div class="card-icone">🌱</div>
+              <h3 class="card-titulo">Agricultura de Precisão</h3>
+              <p class="card-texto">
+                Uso de tecnologia — drones, sensores e GPS — para aplicar insumos apenas onde necessário,
+                reduzindo desperdício e impacto ambiental.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-icone">💧</div>
+              <h3 class="card-titulo">Gestão da Água</h3>
+              <p class="card-texto">
+                Irrigação inteligente e captação de água da chuva garantem a produção mesmo em períodos de seca,
+                sem esgotar os aquíferos.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-icone">🌳</div>
+              <h3 class="card-titulo">Preservação de Matas</h3>
+              <p class="card-texto">
+                O Código Florestal exige que propriedades rurais preservem áreas de vegetação nativa.
+                Matas ciliares protegem rios e evitam erosão do solo.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-icone">♻️</div>
+              <h3 class="card-titulo">Economia Circular</h3>
+              <p class="card-texto">
+                Resíduos orgânicos viram adubo; bagaço de cana vira energia; dejetos de animais viram biogás.
+                No campo sustentável, nada é lixo.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO: QUIZ INTERATIVO -->
+      <section class="secao secao-quiz">
+        <div class="container">
+          <h2 class="secao-titulo">Teste Seus Conhecimentos</h2>
+          <p class="secao-texto">Responda e veja como está seu nível de consciência sobre o agro sustentável.</p>
+
+          <div class="quiz-box" id="quiz-box">
+            <p class="quiz-pergunta" id="quiz-pergunta"></p>
+            <div class="quiz-opcoes" id="quiz-opcoes"></div>
+            <p class="quiz-feedback" id="quiz-feedback"></p>
+            <button class="btn-quiz" id="btn-proxima" style="display:none;">Próxima pergunta →</button>
+            <div class="quiz-resultado" id="quiz-resultado" style="display:none;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO: CONTADOR / DADOS -->
+      <section class="secao secao-dados">
+        <div class="container">
+          <h2 class="secao-titulo">O Agro em Números</h2>
+          <div class="dados-grid">
+            <div class="dado-item">
+              <span class="dado-numero" data-alvo="26">0</span><span class="dado-sufixo">%</span>
+              <p class="dado-label">do PIB brasileiro vem do agronegócio</p>
+            </div>
+            <div class="dado-item">
+              <span class="dado-numero" data-alvo="180">0</span><span class="dado-sufixo">mi</span>
+              <p class="dado-label">de hectares cultivados no Brasil</p>
+            </div>
+            <div class="dado-item">
+              <span class="dado-numero" data-alvo="63">0</span><span class="dado-sufixo">%</span>
+              <p class="dado-label">das exportações são do setor agrícola</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO: CALCULADORA -->
+      <section class="secao secao-calculadora">
+        <div class="container">
+          <h2 class="secao-titulo">Calculadora de Área de Preservação</h2>
+          <p class="secao-texto">
+            Pelo Código Florestal Brasileiro, propriedades rurais devem preservar uma porcentagem de sua área.
+            Simule abaixo:
+          </p>
+          <div class="calc-box">
+            <div class="calc-campo">
+              <label for="area-total">Área total da propriedade (hectares):</label>
+              <input type="number" id="area-total" placeholder="Ex: 500" min="1" />
+            </div>
+            <div class="calc-campo">
+              <label for="bioma">Bioma:</label>
+              <select id="bioma">
+                <option value="20">Cerrado (20%)</option>
+                <option value="80">Amazônia (80%)</option>
+                <option value="20">Mata Atlântica (20%)</option>
+                <option value="20">Pampa (20%)</option>
+                <option value="20">Pantanal (20%)</option>
+              </select>
+            </div>
+            <button class="btn-calcular" id="btn-calcular">Calcular</button>
+            <div class="calc-resultado" id="calc-resultado"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>Projeto desenvolvido para o <strong>Concurso Agrinho 2026</strong> — SENAR-PR / SEED-PR</p>
+        <p class="footer-tema"><em>"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</em></p>
+        <p class="footer-creditos">Fontes: IBGE, Embrapa, Código Florestal Brasileiro (Lei nº 12.651/2012)</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
